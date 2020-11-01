@@ -20,7 +20,9 @@
 //===========================================================Variaveis e constantes
 GLint     msec = 10;
 char      texto[30];						//.. texto a ser escrito no ecran
-
+GLfloat alfaPorta = 0;
+GLfloat posjanela = 0;
+GLfloat alfaTrinco = 0;
 
 //-------------------- Porta
 static GLfloat vertices[] = {
@@ -123,6 +125,138 @@ static GLfloat vertices[] = {
 	0.8, 6.9, -0.3,
 	0.8, 6.9, 0.3,
 	-0.8, 6.9, 0.3,
+
+
+
+	//janela frente
+	-0.8, 6.5, 0.29,		//64
+	0.8, 6.5, 0.29,
+	0.8, 6.9,0.29,
+	-0.8,6.9, 0.29,
+
+	//janela lado
+
+	0.8, 6.5, 0.3,		//68
+	0.8, 6.5, -0.3,
+	0.8, 6.9, -0.3,
+	0.8, 6.9, 0.3,
+
+	//janela trás
+	-0.8, 6.5, -0.29,	//72
+	0.8, 6.5, -0.29,
+	0.8, 6.9, -0.29,
+	-0.8, 6.9, -0.29,
+
+
+	//fechadura
+
+	1.3, 4, 0.301,	//76
+	1.6, 4, 0.301,
+	1.6, 4.8, 0.301,
+	1.3, 4.8, 0.301,
+
+	//trinco
+
+	1.35, 4.4, 0.3011,  //80
+	1.55, 4.4, 0.3011,
+	1.55, 5.3, 0.3011,
+	1.35, 5.3, 0.3011,
+
+	//frame esquerda lado direito
+	-1.8, 0, 0.3, 	// 84 
+	-1.8, 0, -0.3, 	// 85 
+	-1.8, 8.0, -0.3, 	// 86 
+	-1.8, 8.0, 0.3,	// 87 
+
+	//frame esquerda frente
+
+	-1.8, 0, 0.3,		//88
+	-1.8, 8, 0.3,
+	-3, 8, 0.3,
+	-3, 0, 0.3,
+
+	//frame esquerda trás
+
+	-1.8, 0, -0.3,		//92
+	-1.8, 8, -0.3,
+	-3, 8, -0.3,
+	-3, 0, -0.3,
+
+	//frame esquerda esquerda
+
+	-3, 0, 0.3, 		//96
+	-3, 0, -0.3, 	
+	-3, 9.2, -0.3, 
+	-3, 9.2, 0.3,
+
+
+
+	//frame direita lado esquerdo
+	1.8, 0, 0.3, 	// 100
+	1.8, 0, -0.3, 	
+	1.8, 8.0, -0.3, 	 
+	1.8, 8.0, 0.3,	// 103 
+
+	//frame direita frente
+
+	1.8, 0, 0.3,		//104
+	1.8, 8, 0.3,
+	3, 8, 0.3,
+	3, 0, 0.3,
+
+	//frame direita trás
+
+	1.8, 0, -0.3,		//108
+	1.8, 8, -0.3,
+	3, 8, -0.3,
+	3, 0, -0.3,
+
+	//frame direita direita
+
+	3, 0, 0.3, 		//112
+	3, 0, -0.3, 	
+	3, 9.2, -0.3, 
+	3, 9.2, 0.3,
+	
+	
+	//frame direita baixo
+
+	1.8, 0, 0.3,	//116
+	1.8, 0, -0.3,
+	3, 0, -0.3,
+	3, 0, 0.3,
+
+	//frame esq baixo
+
+	-1.8, 0, 0.3,		//120
+	-3, 0, 0.3,
+	-3, 0, -0.3,
+	-1.8, 0, -0.3,
+
+	//frame cima frente
+	-3, 8, 0.3,			//124
+	3, 8, 0.3,
+	3, 9.2, 0.3,
+	-3, 9.2, 0.3,
+
+	//frame cima tras
+	-3, 8, -0.3,		//128
+	3, 8, -0.3,
+	3, 9.2, -0.3,
+	-3, 9.2, -0.3,
+
+	//frame cima cima
+	-3, 9.2, -0.3,		//132
+	-3, 9.2, 0.3,
+	3, 9.2, 0.3,
+	3, 9.2, -0.3,
+
+	//frame cima baixo
+	-3, 8, -0.3,		//136
+	-3, 8, 0.3,
+	3, 8, 0.3,
+	3, 8, -0.3,
+
 };
 
 static GLfloat normais[] = {
@@ -206,6 +340,105 @@ static GLfloat normais[] = {
 	   0.0,  1.0,  0.0,
 	   0.0,  1.0,  0.0,
 	   0.0,  1.0,  0.0,
+
+		0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+
+		0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+
+
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+	   0.0,  1.0,  0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
+		0.0, 1.0, 0.0,
 };
 //------------------------------------------------------------ Cores
 static GLfloat cor[] = {
@@ -290,7 +523,110 @@ static GLfloat cor[] = {
 		0.0,  1.0,  0.0,
 		0.0,  1.0,  0.0,
 		0.0,  1.0,  0.0,
+
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		
+		// x=tam (Direita)
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		// y=tam (Cima)
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+		0.0,  1.0,  0.0,
+
+
+		//fechadura
+		0.0, 0.0, 1.0,
+		0.0, 0.0, 1.0,
+		0.0, 0.0, 1.0,
+		0.0, 0.0, 1.0,
+
+		  //trinco
+	    0.427, 0.321, 0.192,
+		0.427, 0.321, 0.192,
+		0.427, 0.321, 0.192,
+		0.427, 0.321, 0.192,
+
+
+		//frame
+		1, 1, 1,
+		1, 1, 1,
+		1, 1, 1,
+		1, 1, 1,
+
+		1, 1, 1,
+		1, 1, 1,
+	    1, 1, 1,
+	   1, 1, 1, 
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,	
+
+		1, 1, 1,
+		1, 1, 1,
+		1, 1, 1,
+		1, 1, 1,
+
+		1, 1, 1,
+		1, 1, 1,
+	    1, 1, 1,
+	   1, 1, 1, 
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+		1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+	1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+		1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
+	   1, 1, 1,
 };
+
+
 
 static GLuint     direita[] = { 8, 9, 10,  11 };   // regra da mao direita
 static GLuint     esquerda[] = { 0,1,2,3 };
@@ -309,9 +645,39 @@ static GLuint	intesq[] = { 55, 54, 53, 52};
 static GLuint	intbaixo[] = { 56, 57, 58, 59};
 static GLuint	intcima[] = { 60, 61, 62, 63 };
 
+static GLuint	janelafrente[] = {64, 65, 66, 67 };
+static GLuint	janelalado[] = { 68, 69, 70, 71 };
+static GLuint   janelatras[] = { 75,74,73,72 };
+static GLuint   fechadura[] = { 76,77,78,79 };
+
+static GLuint	trinco[] = { 80, 81, 82, 83 };
+
+static GLuint   frameesqdir[] = { 84, 85, 86, 87 };
+static GLuint   frameesqfrente[] = { 88, 89, 90, 91 };
+static GLuint	frameesqtras[] = { 95, 94, 93, 92 };
+static GLuint	frameesqesq[] = { 99, 98,97,96 };
+static GLuint	framediresq[] = { 103, 102, 101, 100 };
+static GLuint	framedirfrente[] = { 107,106,105,104 };
+static GLuint   framedirtras[] = { 108,109,110,111 };
+static GLuint	framedirdir[] = { 112, 113, 114, 115 };
+static GLuint	framedirbaixo[] = {116,117,118,119};
+static GLuint	frameesqbaixo[] = {120,121,122,123};
+static GLuint	framecimafrente[] = { 124, 125, 126, 127 };
+static GLuint	framecimatras[] = { 131, 130, 129, 128 };
+static GLuint	framecimacima[] = { 132, 133, 134, 135 };
+static GLuint	framecimabaixo[] = { 139,138,137,136 };
+
+
+
+
+
 void drawScene() {
 
 	glPushMatrix();
+	glTranslatef(-1.8, 0, 0);
+	glRotatef(alfaPorta, 0, 1, 0);
+	glTranslatef(1.8,0,0);
+	
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, baixo);   // desenhar uma das faces da mesa
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, esquerda);
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, direita);
@@ -329,7 +695,42 @@ void drawScene() {
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, intesq);
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, intbaixo);
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, intcima);
+
+		glPushMatrix();
+		glTranslatef(posjanela, 0, 0);
+		glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, janelafrente);
+		glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT,	janelalado);
+		glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, janelatras);
+		glPopMatrix();
+		glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, fechadura);
+
+
+		glPushMatrix();
+		glTranslatef(1.45, 4.5, 0);
+		glRotatef(alfaTrinco, 0, 0, 1);
+		glTranslatef(-1.45, -4.5, 0);
+		glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, trinco);
+
+		glPopMatrix();
+
 	glPopMatrix();
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frameesqdir);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frameesqfrente);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frameesqtras);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frameesqesq);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framedirdir);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framedirfrente);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framedirtras);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framediresq);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framedirbaixo);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frameesqbaixo);
+
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framecimafrente);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framecimatras);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framecimacima);
+	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, framecimabaixo);
+
+	
 }
 //------------------------------------------------------------ Sistema Coordenadas + objectos
 GLint		wScreen = 600, hScreen = 500;		//.. janela
@@ -416,7 +817,7 @@ void drawObservador_Target()
 {
 	glColor4f(YELLOW);
 	glPushMatrix();
-		glTranslatef(obsT[0], obsT[1], obsT[2]);
+	glTranslatef(obsT[0], obsT[1], obsT[2]);
 	glPopMatrix();
 }
 
@@ -497,9 +898,21 @@ void keyboard(unsigned char key, int x, int y) {
 	
    //------------------------------ zoom
 	case 'z': 	case 'Z':
-		
+		if ((alfaPorta == 0 && alfaTrinco > -45) || (alfaPorta != 0)) {
+			if (alfaPorta < 90) {
+				alfaPorta += 5;
+			}
+		}
+		glutPostRedisplay();
 		break;
 	case 'x':	case 'X':
+
+		if ((alfaPorta == 0 && alfaTrinco > -45) || (alfaPorta != 0)) {
+			if (alfaPorta > -90) {
+				alfaPorta -= 5;
+			}
+		}
+		glutPostRedisplay();
 		break;
 
 		//------------------------------ projeccao
@@ -508,6 +921,39 @@ void keyboard(unsigned char key, int x, int y) {
 		glutPostRedisplay();
 		break;
 	
+
+
+	case 'a':	case 'A':
+		if (posjanela > -0.8) {
+			posjanela -= 0.05;
+
+		}
+		glutPostRedisplay();
+		break;
+
+	case 's':	case 'S':
+		if (posjanela < 0) {
+			posjanela += 0.05;
+
+		}
+		glutPostRedisplay();
+		break;
+
+	case 'q':	case 'Q':
+		if (alfaTrinco < 0) {
+
+			alfaTrinco += 2;
+		}
+		break;
+
+
+	case 'w':	case 'W':
+		if (alfaTrinco > -90) {
+			alfaTrinco -= 2;
+		}
+		break;
+
+
 		//--------------------------- Escape
 	case 27:
 		exit(0);
@@ -522,7 +968,7 @@ void teclasNotAscii(int key, int x, int y) {
 
 
 	//------------------------------- olhar para a origem
-		obsT[0] = 0; obsT[1] = 0; obsT[2] = 0;
+		obsT[0] = 0; obsT[1] = 4; obsT[2] = 0;
 		
 		if (key == GLUT_KEY_UP)    obsP[1] = obsP[1] + 0.5;
 		if (key == GLUT_KEY_DOWN)  obsP[1] = obsP[1] - 0.5;
