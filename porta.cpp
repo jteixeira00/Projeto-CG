@@ -979,9 +979,9 @@ void drawScene() {
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frentedir);
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, trasesq);
 	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, trasdir);
-	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frentecima);
-	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, trascima);
-	glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, topo);
+	//glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, frentecima);
+	//glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, trascima);
+	//glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_INT, topo);
 
 	
 
@@ -1060,7 +1060,7 @@ int   tipoProjeccao = 0;
 //=========================================================================== INIT
 void initialize(void)
 {
-	glClearColor(BLACK);		//………………………………………………………………………………Apagar
+	glClearColor(WHITE);		//………………………………………………………………………………Apagar
 	glEnable(GL_DEPTH_TEST);	//………………………………………………………………………………Profundidade
 	glShadeModel(GL_SMOOTH);	//………………………………………………………………………………Interpolacao de cores	
 
